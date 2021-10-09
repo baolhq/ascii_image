@@ -13,7 +13,7 @@ img = Image.open(BytesIO(response.content))
 # Resize image
 width, height = img.size
 aspect_ratio = height / width
-new_width = 120
+new_width = 170
 new_height = aspect_ratio * new_width * 0.5
 img = img.resize((new_width, int(new_height)))
 
@@ -21,7 +21,7 @@ img = img.resize((new_width, int(new_height)))
 img = img.convert("L")
 
 pixels = img.getdata()
-chars = ["B", "S", "#", "&", "@", "$", " ", "*", "!", ":", "."]
+chars = ["B", "S", "#", "&", "@", "$", "%", "*", "!", ":", "."]
 new_pixels = [chars[pixel // 25] for pixel in pixels]
 new_pixels = ''.join(new_pixels)
 
